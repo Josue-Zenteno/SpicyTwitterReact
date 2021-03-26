@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import App from './components/App';
+import Home from './components/Home';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<HashRouter>
+  <div>
+    <Route exact path="/" component={App} />
+    <Route path="/home" component={Home} />
+  </div>
+</HashRouter >, document.getElementById('root'));
 
+//<Route path="/home" component={Home} />  Linea que ha borrado fontecha
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
